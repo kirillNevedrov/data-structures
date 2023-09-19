@@ -44,38 +44,27 @@ class LinkedList(Generic[T]):
         current_node.next = LinkedListNode(value=value)
 
     def find(self, value: T) -> Optional[LinkedListNode[T]]:
-        if not self.root:
-            return None
-
         current_node = self.root
 
-        while True:
+        while current_node:
             if current_node.value == value:
                 return current_node
 
-            if current_node.next:
-                current_node = current_node.next
-            else:
-                break
+            current_node = current_node.next
 
         return None
 
     def remove(self, value: T) -> None:
-        if not self.root:
-            return
-
         prev_node = None
         current_node = self.root
 
-        while True:
+        while current_node:
             if current_node.value == value:
                 if prev_node:
                     prev_node.next = current_node.next
                 else:
-                    self.root = current_node.next
+                    self.root = current_node.next                    
+                return
 
-            if current_node.next:
-                prev_node = current_node
-                current_node = current_node.next
-            else:
-                break
+            prev_node = current_node
+            current_node = current_node.next
