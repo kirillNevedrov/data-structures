@@ -12,14 +12,30 @@ class LinkedListNode(Generic[T]):
         self.value = value
         self.next = next
 
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, LinkedListNode):
+            return False
+
+        return self.value == other.value and self.next == other.next
+
 
 class LinkedList(Generic[T]):
-    root: LinkedListNode[T]
+    root: Optional[LinkedListNode[T]]
 
-    def __init__(self, root: LinkedListNode[T]) -> None:
+    def __init__(self, root: Optional[LinkedListNode[T]] = None) -> None:
         self.root = root
 
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, LinkedList):
+            return False
+
+        return self.root == other.root
+
     def append(self, value: T) -> None:
+        if not self.root:
+            self.root = LinkedListNode(value=value)
+            return
+
         current_node = self.root
 
         while current_node.next:
@@ -28,6 +44,9 @@ class LinkedList(Generic[T]):
         current_node.next = LinkedListNode(value=value)
 
     def find(self, value: T) -> Optional[LinkedListNode[T]]:
+        if not self.root:
+            return None
+
         current_node = self.root
 
         while True:
@@ -42,6 +61,9 @@ class LinkedList(Generic[T]):
         return None
 
     def remove(self, value: T) -> None:
+        if not self.root:
+            return
+
         prev_node = None
         current_node = self.root
 
