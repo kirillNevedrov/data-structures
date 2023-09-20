@@ -68,6 +68,17 @@ def test_find_returns_node_by_value():
         )
     ).find(3) == LinkedListNode(value=3)
 
+def test_find_returns_node_by_predicate():
+    assert LinkedList(
+        root=LinkedListNode(
+            value=1,
+            next=LinkedListNode(
+                value=2,
+                next=LinkedListNode(value=3),
+            ),
+        )
+    ).find(lambda v: v == 3) == LinkedListNode(value=3)
+
 
 def test_remove_removes_node_by_value():
     # arrange

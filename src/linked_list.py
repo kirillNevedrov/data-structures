@@ -1,5 +1,5 @@
 from __future__ import annotations
-from typing import TypeVar, Generic, Optional
+from typing import TypeVar, Generic, Optional, Callable, Union
 
 T = TypeVar("T")
 
@@ -43,12 +43,17 @@ class LinkedList(Generic[T]):
 
         current_node.next = LinkedListNode(value=value)
 
-    def find(self, value: T) -> Optional[LinkedListNode[T]]:
+    def find(self, value: Union[T, Callable[[T], bool]]) -> Optional[LinkedListNode[T]]:
         current_node = self.root
+        is_callable = callable(value)
 
         while current_node:
-            if current_node.value == value:
-                return current_node
+            if is_callable:
+                if value(current_node.value):
+                    return current_node
+            else:
+                if current_node.value == value:
+                    return current_node
 
             current_node = current_node.next
 
@@ -63,7 +68,7 @@ class LinkedList(Generic[T]):
                 if prev_node:
                     prev_node.next = current_node.next
                 else:
-                    self.root = current_node.next                    
+                    self.root = current_node.next
                 return
 
             prev_node = current_node
