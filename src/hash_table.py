@@ -1,7 +1,8 @@
 from typing import Tuple, TypeVar, Generic, Optional, List
 from linked_list import LinkedList, LinkedListNode
 
-# TODO: figure out how to choose hash table array size to guarantee O(1) access by key time
+# TODO: how to choose hash table array size to guarantee O(1) access by key time?
+# TODO: why array of linked lists not array of arrays?
 
 KT = TypeVar("KT")
 VT = TypeVar("VT")
