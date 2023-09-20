@@ -28,7 +28,7 @@ class HashTable(Generic[KT, VT]):
         return True
 
     def set(self, key: KT, value: VT) -> None:
-        index = hash(key) % len(self.pointers)
+        index = self.__get_index(key)
 
         if self.pointers[index] is None:
             self.pointers[index] = LinkedList(root=LinkedListNode(value=(key, value)))
@@ -36,7 +36,7 @@ class HashTable(Generic[KT, VT]):
             self.pointers[index].append((key, value))
 
     def get(self, key: KT) -> Optional[VT]:
-        index = hash(key) % len(self.pointers)
+        index = self.__get_index(key)
 
         if self.pointers[index] is None:
             return None
@@ -45,7 +45,10 @@ class HashTable(Generic[KT, VT]):
             return node.value[1] if node else None
 
     def remove(self, key: KT) -> None:
-        index = hash(key) % len(self.pointers)
+        index = self.__get_index(key)
 
         if self.pointers[index]:
             self.pointers[index].remove(lambda v: v[0] == key)
+
+    def __get_index(self, key: KT):
+        return hash(key) % len(self.pointers)
