@@ -102,3 +102,26 @@ def test_remove_removes_node_by_value():
             next=LinkedListNode(value=3),
         )
     )
+
+def test_remove_removes_node_by_predicate():
+    # arrange
+    linked_list = LinkedList(
+        root=LinkedListNode(
+            value=1,
+            next=LinkedListNode(
+                value=2,
+                next=LinkedListNode(value=3),
+            ),
+        )
+    )
+
+    # act
+    linked_list.remove(lambda v: v == 2)
+
+    # assert
+    assert linked_list == LinkedList(
+        root=LinkedListNode(
+            value=1,
+            next=LinkedListNode(value=3),
+        )
+    )

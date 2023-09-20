@@ -41,4 +41,11 @@ class HashTable(Generic[KT, VT]):
         if self.pointers[index] is None:
             return None
         else:
-            return self.pointers[index].find(lambda v: v[0] == key)
+            node = self.pointers[index].find(lambda v: v[0] == key)
+            return node.value[1] if node else None
+
+    def remove(self, key: KT) -> None:
+        index = hash(key) % len(self.pointers)
+
+        if self.pointers[index]:
+            self.pointers[index].remove(lambda v: v[0] == key)

@@ -31,7 +31,7 @@ def test_set_sets_value_to_hash_table():
     hash_table.set("a", 10)
 
     # assert
-    hash_table.get("a") == 10
+    assert hash_table.get("a") == 10
 
 def test_get_gets_value_from_hash_table_by_key():
     # arrange
@@ -42,4 +42,19 @@ def test_get_gets_value_from_hash_table_by_key():
 
     # act
     # assert
-    hash_table.get("c") == 15
+    assert hash_table.get("b") == 15
+
+def test_delete_deletes_value_from_hash_table_by_key():
+    # arrange
+    hash_table = HashTable()
+    hash_table.set("a", 10)
+    hash_table.set("b", 15)
+    hash_table.set("c", 16)
+
+    # act
+    hash_table.remove("b")
+
+    # assert
+    assert hash_table.get("a") == 10
+    assert hash_table.get("b") is None
+    assert hash_table.get("c") == 16

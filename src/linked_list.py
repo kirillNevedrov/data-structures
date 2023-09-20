@@ -48,23 +48,32 @@ class LinkedList(Generic[T]):
         is_callable = callable(value)
 
         while current_node:
+            is_found = False
             if is_callable:
-                if value(current_node.value):
-                    return current_node
+                is_found = value(current_node.value)
             else:
-                if current_node.value == value:
-                    return current_node
+                is_found = current_node.value == value                    
+
+            if is_found:
+                return current_node
 
             current_node = current_node.next
 
         return None
 
-    def remove(self, value: T) -> None:
+    def remove(self, value: Union[T, Callable[[T], bool]]) -> None:
         prev_node = None
         current_node = self.root
+        is_callable = callable(value)
 
         while current_node:
-            if current_node.value == value:
+            is_found = False
+            if is_callable:
+                is_found = value(current_node.value)
+            else:
+                is_found = current_node.value == value
+
+            if is_found:
                 if prev_node:
                     prev_node.next = current_node.next
                 else:
