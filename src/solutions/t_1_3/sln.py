@@ -1,4 +1,4 @@
-def utlify(string: str, length: int) -> str:
+def urlify(string: str, length: int) -> str:
     chars = [c for c in string]
     offset = 0
 
