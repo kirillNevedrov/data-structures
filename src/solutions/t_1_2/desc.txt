@@ -1,0 +1,10 @@
+example:
+
+input: "antopts", "tnaospt"
+output: True
+
+input: "antopts", "tnaispt"
+output: False
+
+brute force: compare lengths, then transform both string to dictionary with character as key and counter as a value, then go through keys of firs dict and check if key exist in second dict and values are equal. time: O(n), space O(n) 
+optimized: compare lengths, sort both strings, then compare them character by character. time: O(n*logn), space O(1)

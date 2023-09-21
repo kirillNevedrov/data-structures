@@ -1,4 +1,4 @@
-from linked_list import LinkedList, LinkedListNode
+from .linked_list import LinkedList, LinkedListNode
 
 
 def test_equals_returns_true_for_equal_lists():

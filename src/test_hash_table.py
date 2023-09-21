@@ -1,4 +1,4 @@
-from hash_table import HashTable
+from .hash_table import HashTable
 
 def test_equals_returns_true_for_equal_hash_tables():
     hash_table_1 = HashTable[str, int]()

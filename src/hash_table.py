@@ -1,5 +1,6 @@
 from typing import Tuple, TypeVar, Generic, Optional, List
-from linked_list import LinkedList, LinkedListNode
+
+from .linked_list import LinkedList, LinkedListNode
 
 # TODO: how to choose hash table array size to guarantee O(1) access by key time?
 # TODO: why array of linked lists not array of arrays?

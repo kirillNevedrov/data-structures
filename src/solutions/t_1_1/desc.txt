@@ -1,0 +1,10 @@
+example:
+
+input: "antops"
+output: True
+
+input: "antopts"
+output: False
+
+brute force: for each character check the rest of characters in the string. time: O(n^2), space O(1)
+optimized: sort string first, then go through string and check if next character if similar to current one. time: O(n*logn), space: O(1)
