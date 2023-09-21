@@ -1,0 +1,7 @@
+example:
+
+input: "Hi, this is the string        ", 22 
+output: "Hi,%20this%20is%20the%20string"
+
+brute force: go through characters array and every time when space is fround replace array by subarray before space + unicode encoding + subarary after space. time: O(n^2), space: O(n)
+optimized: first go from left to right and calculate offset, then go from right to left and move every character by offset if it is not a space, if it is space then replace in by 3 items %,2,0 starting from index of space. time: O(n), space: O(1)
