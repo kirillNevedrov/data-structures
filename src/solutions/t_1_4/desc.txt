@@ -3,6 +3,9 @@ example:
 input: "Tact Coa" 
 output: True (e.g. taco cat)
 
+brute force: to check if palindrome: we can make all characters lowercase, remove all spaces (spaces can be removed in O(n) time), then make two pointers in the middle depending on event or odd string length is, then go into two directions and chech if characters are similar. time: O(n), space: O(1)
+then for each permutation check if it is palindrome. time O(n! * n), space: O(n). n! can be calculated recusrsive by considering that fron n-1 len string we can create n permitations with n'th characters 
+
 how to check if string is palindrome
 
 if empty string then false
@@ -24,7 +27,5 @@ s[(n-1)/2 - 1] == s[(n+1)/2]
 with integer division single comparison for both
 s[n//2 - 1] == s[(n+1)//2]
 
-brute force: to check if palindrome: we can make all characters lowercase, remove all spaces (spaces can be removed in O(n) time), then make two pointers in the middle depending on event or odd string length is, then go into two directions and chech if characters are similar. time: O(n), space: O(1)
-then for each permutation check if it is palindrome. time O(n! * n), space: O(n). n! can be calculated recusrsive by considering that fron n-1 len string we can create n permitations with n'th characters 
 optimized: for palindrome each character should be found event number of times if it is even string and all characters except one should be presenter event number of times if it is odd string. 
 so we just calculate numberof characters and then check length of string and values of characters. time: O(n), space: O(n)
