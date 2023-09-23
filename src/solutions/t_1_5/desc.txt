@@ -1,0 +1,34 @@
+info:
+
+one edit away
+types of edits: insert, delete, replace character
+
+example:
+
+input: "test", "tes"
+output: True 
+
+input: "test", "best"
+output: True 
+
+input: "test", "belt"
+output: False
+
+brute force: 
+find string with max length, 
+check that another string has similar length or one character shorter, 
+
+make counter of characters for first strings, 
+go through same counters and count to negative direction for second string
+
+calculate sum of positive and sum of negative
+if both != 0, then reduce both abs values by 1 as a replace
+then check that sum of abs values is equal or less than 1
+
+time: O(n + m)
+space: O(n + m)
+
+optimized:
+we could use array of integers instead of dictionary, 
+O() estimations will not change
+
