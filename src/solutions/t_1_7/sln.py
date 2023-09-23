@@ -1,7 +1,7 @@
 from typing import List
 
 
-def rotate(matrix: List[List[int]]) -> List[List[int]]:
+def rotate(matrix: List[List[int]]) -> None:
     size = len(matrix)
     for row_i in range(0, size):
         for column_i in range(row_i, size - 1 - row_i):

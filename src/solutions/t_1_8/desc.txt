@@ -1,0 +1,38 @@
+info:
+
+matrix M * N
+
+if element is 0 then set entire row and column to 0's 
+
+example:
+
+input: [
+    [1, 2, 3],
+    [17, 5, 91],
+    [0 , 0 , 1000]
+]
+
+output: [
+    [1, 0, 3],
+    [17, 0, 91],
+    [0 , 0 , 0]
+]
+
+brute force: 
+go through matrix an collect indexes of all 0 items
+then for each 0 element set its row and column to 0's
+
+time: O(M*N*(M + N)) = O(N*M^2 + M*N^2)
+space: O(M*N)
+
+optimized: 
+
+we can set elements to zeros in O(M*N) so entire time should be O(M*N)
+
+we can collect all zero rows and coluns in hash sets and then set them to zeros 
+
+time O(m*n + m*n + n*m)
+space: O(m + n)
+
+optimized:
+instead of set of integers we could use array of booleans or even bitmap (for short length only <= 32), but it will not chnage an estimation  
