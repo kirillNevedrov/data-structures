@@ -1,32 +1,17 @@
-class CharCount:
-    char: str
-    count: int
-
-    def __init__(self, char: str, count: int) -> None:
-        self.char = char
-        self.count = count
-
-
 def compress(string: str) -> str:
     if len(string) <= 2:
         return string
 
-    chars_counts = [CharCount(char=string[0], count = 1)]
-    for rp in range(1, len(string)):
-        if string[rp] != string[rp - 1]:
-            chars_counts.append(CharCount(char=string[rp], count = 1))
-        else:
-            chars_counts[-1].count += 1
-
-    unique_chars_number = len(chars_counts)
-
-    if unique_chars_number * 2 >= len(string):
-        return string
-
     chars = []
+    char_count = 0
 
-    for c in chars_counts:
-        chars.append(c.char)
-        chars.append(str(c.count))
+    for rp in range(0, len(string)):
+        char_count += 1
 
-    return "".join(chars)
+        if rp == len(string) - 1 or string[rp] != string[rp + 1]:
+            chars.append(string[rp])
+            chars.append(str(char_count))
+            char_count = 0
+
+
+    return "".join(chars) if len(chars) < len(string) else string
