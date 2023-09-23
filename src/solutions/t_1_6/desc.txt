@@ -1,0 +1,48 @@
+info:
+
+compressed string
+
+in new longer than original, then return original
+
+only upper case and lowercase latter a-z
+
+example:
+
+input:  "tttesssstt"
+output: "t3e1s4t2"
+
+input:  "tttestt"
+output: "tttestt"
+
+brute force: 
+create new empty string, 
+then go throug original one until new character detected and write result for letter to new string
+finally compare lenghts on new strign and original one and return shorter one
+
+time: O(n)
+space: O(n)
+
+optimized: 
+we can implement inplace edit approach with two pointer, 
+as we get to new character we write count and move write pointer by two, 
+rest of string can be filled by empty strings
+
+what to do if character presented only once?
+we can go from the end to the start, but then we need to store counts somwhere to understand offsets
+
+but any way we need to keep original string to compare final result 
+(actually not necessay, we can just go through string and calc number of unique characters, 
+after that multiply lenght by two and compare with original one)
+
+time: O(n)
+space: O(1)
+
+optimized:
+as we now that numer of unique characters limited to 26*2, we can save counts not to dict but to array of int where index in array is index in alphabet
+
+
+optimized:
+final implemented solution
+
+time: O(n)
+space: O(n), but we can say O(1) as number of possible characters is 52. but of course as we copy string to array and back we still have O(n)
