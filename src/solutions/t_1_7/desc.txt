@@ -1,0 +1,65 @@
+info:
+
+rotate N * N matrix by 90 degrees
+
+preferabli do it inplace
+
+example:
+
+input: [
+    [1, 2, 3],
+    [17, 5, 91],
+    [0 , 0 , 1000]
+]
+
+output: [
+    [3, 91, 1000],
+    [2, 5, 0],
+    [1, 17, 0]
+]
+
+[1, 2, 3, 4],
+[17, 5, 91, 6],
+[0 , 0 , 1000, 11]
+[0 , 1 , 12, 16]
+
+brute force: 
+
+how indexes change:
+
+0.0 -> 2.0
+0.1 -> 1.0
+0.2 -> 0.0
+
+1.0 -> 2.1
+1.1 -> 1.1
+1.2 -> 0.1
+
+2.0 -> 2.2
+2.1 -> 1.2
+2.2 -> 0.2
+
+just build new matrix from original transforming old position to new position by rule
+
+time: O(n^2)
+space: O(n^2)
+
+optimized: 
+
+we need to transform rows to columns
+
+how can we do it inspace?
+I suppose with two pointer again
+we save one value to variable while set prev value to it
+
+row index = n - column index
+column index = row index
+
+time: O(n^2)
+space: O(1)
+
+rotate from 0 to n - 1 elements in 0 row
+
+rotatet from 1 to n - 3 in 1 row
+
+etc until end index - start index >= 0
