@@ -1,0 +1,26 @@
+info:
+
+is one string rotatin of other
+
+one call to is_substring
+
+example:
+
+input: "waterbottle", "erbottlewat"
+output: True
+
+input: "waterbottle", "erbottlewta"
+output: False
+
+brute force: 
+
+check that lengths are similar
+
+check that charaters are similar and that from one index string similar part of other string from beginning, then the rest is similar to rest of other string
+
+
+time: O(n)
+
+space O(1)
+
+optimized: 
