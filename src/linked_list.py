@@ -52,7 +52,7 @@ class LinkedList(Generic[T]):
             if is_callable:
                 is_found = value(current_node.value)
             else:
-                is_found = current_node.value == value                    
+                is_found = current_node.value == value
 
             if is_found:
                 return current_node

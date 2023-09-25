@@ -1,0 +1,24 @@
+info:
+
+unsorted linked list,
+remove duplicates
+temporary buffer is not allowed
+
+example:
+
+input: 1 -> 0 -> 5 -> 6 -> 3 -> 1 -> 100 -> 3
+output: 1 -> 0 -> 5 -> 6 -> 3 -> 100
+
+brute force:
+go through list and for each element go through list one more time and remove all the duplicates of the element
+
+time: O(n^2)
+space: O(1)
+
+
+optimized: 
+
+sort linked list first, then go through list and remove all the elements that similar to prev
+
+time: O(nlogn)
+space: O(1)
