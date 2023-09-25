@@ -1,0 +1,36 @@
+info:
+
+linked list
+
+detect loop and return first element of the loop
+
+
+example:
+
+input A -> B -> C -> D -> E -> C(same C as earlier)
+output: C
+
+brute force: 
+
+go through list for each node go to the end to check if similar node exists 
+if so return that node
+
+time: O(n^2)
+space: O(1)
+
+optimized: 
+
+we can save each node to set than just check if it exists in set
+time: O(n)
+space: O(n)
+
+if we have loop we will eventually go back to fisr loop element, so we just need to undertsnad that we alrady visited that node
+
+does not work as linked list node is not heshable
+
+optimized:
+
+while we go through list we just check next to our own test node, when we arrive to test node it means thatprevious is loop node
+
+time: O(n)
+space: O(1)
