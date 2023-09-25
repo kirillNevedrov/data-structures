@@ -1,0 +1,23 @@
+info:
+
+linked list
+
+move all nodes less then vlue x before all nodes that greater or equal
+order of nodes in two partitions is not important
+
+
+example:
+
+input 3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1, 5 
+output: 3 -> 1 -> 2 -> 10 -> 5 -> 5 -> 8
+
+brute force: 
+
+create two linked list on consists of elements less than x, 
+other consists of elements greater or equal to x
+then just assign root of second list as next on lest element of first LinkedList
+
+time: O(n)
+space: O(1) because we just create empty lists and reassign pointer to them
+
+optimized: 
