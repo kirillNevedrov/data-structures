@@ -1,0 +1,20 @@
+info:
+
+use sigle array to implemet three stacks
+
+example:
+
+
+
+brute force: 
+for first stack adresses use i * 3
+for second stack adresses use (i * 3) + 1
+for third stack adresses use (i * 3) + 2
+
+when we add element to last stack we init prev stacks values by None
+
+when we delete element from first stack we just set it to None
+
+we can also separately manage size/last index of each stack to make all the operations in O(1)
+
+optimized:
