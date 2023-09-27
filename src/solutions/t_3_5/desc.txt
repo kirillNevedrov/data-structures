@@ -1,0 +1,34 @@
+info:
+
+sort stack, 
+smallest at the top
+you can use additional temp stack, not other data structures allowed
+
+stack operations:
+pop, push, peek, is_empty
+
+example:
+
+imput:
+
+-> 1, 3, 5, 76, 2, 3, 1, 14, 9
+<-
+
+output:
+
+-> 1, 1, 2, 3, 3, 5, 9, 14, 76
+<-
+
+brute force: 
+pop all elements from stack to other stack and calc min one, save its index, then add all except this one(by index) back and add min one at the end
+
+do this until value of last one is equal to max
+
+time: O(n^2)
+space: O(n)
+
+optimized:
+
+
+
+
