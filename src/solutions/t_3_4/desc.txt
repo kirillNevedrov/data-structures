@@ -1,0 +1,53 @@
+info:
+
+implement queue which uses two stacks internally
+
+example:
+
+queue:
+<- 1 2 3 9 5 2 3 0 89 <-
+
+stack: 
+-> 1 2 3 9 5 2 3 0 89
+<-
+
+q:
+0
+
+s:
+0
+
+q:
+0 6
+
+s:
+6 0
+
+q:
+0 6 7
+
+s:
+7 6 0
+
+operations:
+add 
+remove
+
+brute force: 
+when we add new element we pop all the elements to other stack then add new element then add all existing elements
+
+variation: write as usual, but on read copy to other stack and pop from it
+
+add
+time: O(n)
+space: O(n)
+
+remove
+time: O(1)
+space: O(1)
+
+optimized:
+
+
+
+
