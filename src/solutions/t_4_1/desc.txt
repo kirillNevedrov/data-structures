@@ -1,0 +1,35 @@
+info:
+
+directed graph
+
+two nodes
+
+s and e 
+
+fin out is there a path between nodes
+
+
+example:
+
+
+brute force: 
+depth first search
+
+time: O(n)
+space: O(h)
+
+n -number of nodes
+h - tree height
+
+
+optimized:
+
+breath first
+
+time: O(n)
+space: O(n)
+
+
+cycles are solved by visited prop
+
+
