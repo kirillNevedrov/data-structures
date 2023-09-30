@@ -1,0 +1,18 @@
+info:
+
+check if binary tree is balanced
+
+heights of two subtrees of any node neved differ by more than one 
+
+example:
+
+
+brute force:
+
+with recursive deeps first pass calculate heights of left and right subtress and check difference
+
+time: O(n)
+
+space O(h)
+
+optimized:
