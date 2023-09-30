@@ -1,0 +1,27 @@
+info:
+
+second is dependent on first
+
+return build order
+
+where dependencies built before projects that depend on them
+
+example:
+
+
+input: 
+projects: a, b, c, d, e, f
+dependencies: (a, d), (f, b), (b, d), (f, a), (d, c)
+
+output: f, e, a, b, d, c
+
+
+brute force:
+topologicl sort
+
+time: O(v+e)
+
+space: O(v)
+
+
+optimized:
