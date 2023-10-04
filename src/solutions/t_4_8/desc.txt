@@ -1,0 +1,30 @@
+info:
+
+first common ancestor of two nodes in binary tree
+
+do not use additional dat structure
+
+
+
+
+example:
+
+         7
+    4         2
+  9   91    0    11
+2
+
+
+brute force:
+
+depth first
+start from root and check if node is ancestor of two nodes, 
+for last common ancestor save distance to first and distance to second
+if next is lower by at least one then iit is new common ancestor
+
+time: O(n log n) log n nodes checked as if node if not correct we do not go deeper, but for each node we could check each node
+space: O(1)
+
+optimized:
+
+
