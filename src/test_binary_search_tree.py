@@ -50,3 +50,22 @@ def test_remove_removes_value_maintaining_sort_order():
             ),
         )
     )
+
+
+def test_search_returns_node_if_node_exists():
+    # arrange
+    tree = BinarySearchTree()
+
+    tree.insert(3)
+    tree.insert(7)
+    tree.insert(9)
+    tree.insert(5)
+    tree.insert(1)
+
+    # act
+    # assert
+    assert tree.search(7) == BinaryTreeNode(
+        value=7,
+        left=BinaryTreeNode(value=5),
+        right=BinaryTreeNode(value=9),
+    )

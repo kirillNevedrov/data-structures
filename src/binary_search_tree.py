@@ -19,24 +19,21 @@ class BinarySearchTree(BinaryTree[T]):
             insert_node(self.root, node)
 
     def remove(self, value: T) -> None:
-        if self.root is None:
-            return
-        else:
-            remove(self, None, self.root, value)
+        remove(self, None, self.root, value)
+
+    def search(self, value: T) -> Optional[BinaryTreeNode[T]]:
+        return search_node(self.root, value)
 
 
 def insert_node(current_node: BinaryTreeNode[T], node: BinaryTreeNode[T]) -> None:
-    left = current_node.left
-    right = current_node.right
-
     if node.value <= current_node.value:
-        if left:
-            insert_node(left, node)
+        if current_node.left:
+            insert_node(current_node.left, node)
         else:
             current_node.left = node
     else:
-        if right:
-            insert_node(right, node)
+        if current_node.right:
+            insert_node(current_node.right, node)
         else:
             current_node.right = node
 
@@ -47,6 +44,9 @@ def remove(
     current_node: BinaryTreeNode[T],
     value: T,
 ) -> None:
+    if current_node is None:
+        return
+
     if current_node.value == value:
         if parent_node:
             if current_node is parent_node.left:
@@ -69,7 +69,22 @@ def remove(
             elif current_node.right:
                 tree.root = current_node.right
 
-    elif value < current_node.value and current_node.left:
+    elif value < current_node.value:
         remove(tree, current_node, current_node.left, value)
-    elif value > current_node.value and current_node.right:
+    else:
         remove(tree, current_node, current_node.right, value)
+
+
+def search_node(
+    current_node: BinaryTreeNode[T], value: T
+) -> Optional[BinaryTreeNode[T]]:
+    if current_node is None:
+        return None
+
+    if current_node.value == value:
+        return current_node
+
+    if value < current_node.value:
+        return search_node(current_node.left, value)
+    else:
+        return search_node(current_node.right, value)
