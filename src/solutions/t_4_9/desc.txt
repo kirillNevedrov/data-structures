@@ -1,0 +1,40 @@
+info:
+
+binary search tree with distincs elements
+
+was create from going through array left to right
+
+print all posible arrays
+
+example:
+
+input:
+  2
+1   3
+
+output: [2,1,3], [2,3,1]
+
+brute force:
+
+if we asume that there is no rebalancing, then 0th is root element, element on nth level could be earliest nth in sequence
+
+so we create all candidates for level o, then all candidates fro level 1, then all candidates for levelo 2, etc.
+
+then we build all posible combiinations taking elements from each level and checing that it is not in the string yet
+
+
+
+time: O(n!)
+
+space: O(1)
+
+
+optimized:
+
+we could do it recursive:
+
+build first level from root element, then call to build all combinations from second level nodes for the rest of sequnce, then for each taking one node out and building fro the rest of sequnce from next level
+
+time O(n!)
+
+space O(n)
