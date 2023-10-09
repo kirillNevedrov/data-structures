@@ -16,3 +16,6 @@ O(M)
 
 optimized:
 
+create mask, clear, shift, merge
+
+0(1)
