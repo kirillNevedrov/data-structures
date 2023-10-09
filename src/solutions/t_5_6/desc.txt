@@ -1,0 +1,22 @@
+info:
+
+
+
+example:
+
+input: N = 11101, M = 01111
+
+output: 2
+
+brute force:
+
+go through numbers and compare
+
+O(n)
+
+
+optimized:
+
+xor to get 1 where is the difference
+
+O(1)
