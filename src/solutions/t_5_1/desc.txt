@@ -1,0 +1,18 @@
+info:
+
+
+
+example:
+
+input: N = 10000000000, M = 10011, i = 2, j = 6
+
+output: 10001001100
+
+brute force:
+
+go through bits of first number and set or caler bits of another number
+
+O(M)
+
+optimized:
+
