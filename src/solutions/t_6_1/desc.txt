@@ -1,0 +1,33 @@
+info:
+
+20 bottles of pills
+19 bottles have 1.0 gram pills
+1 has 1.1 gram pills
+
+scale provides exact measurement
+
+you can use scale only once
+
+find heavy bottle
+
+
+
+example:
+
+brute force:
+
+options:
+
+- take bottle randomly and meausre, then we have 1/20 chance and we do not know which weight is hevier and which is liter if we only have one measure
+
+- take one pill from each then we again have 1/20 chance but measure will say us is it heavy bottle or not
+
+- take pills from multiple bottles and measure them will say us if we have heavy bottle in sample or not
+
+  if we take pills from 10 bottles we have 1/10 chance to find havy bottle
+
+- we take 1 pill from first, two pills from second, etc., we can calculate expected wight if all 1 g it is 1+ 2+ 3+ 4 ... + 20 = 210, then we can extract from our weight 210 and devide by 0.1 to get number
+
+optimized:
+
+

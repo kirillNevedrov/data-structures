@@ -1,0 +1,43 @@
+info:
+
+given:
+
+2 ants on different vertices of triangle
+
+they start walking on the sides of triangle
+
+each ant randomly picks direction
+
+probabilities of directions is similar
+
+they walk on the same speed
+
+
+
+task:
+
+find probability of collisiosn between any two of them
+
+additional task:
+find probability of collision of n ants on n-vertex polygon
+
+example:
+
+brute force:
+
+we need to find probability of event that any to go to different direction
+
+we can calculate all possible events and find portion of event when any to go to different direction
+
+we can consider each ant as binary number with possible values 0 and 1
+
+then we can consider sequence of 3 bits 
+
+in total we can have 2*2*2=8 combinations and they go to different directions only when sequnces 000 or 111 so 2 cases
+
+so probability of collision is (8-2)/8=3/4  (2^n - 2)/2^n = 1 - 2/2^n = 1 - 2^(1-n) = 1 - 1/2^(n-1) 
+
+
+optimized:
+
+
