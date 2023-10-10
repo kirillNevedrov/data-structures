@@ -1,0 +1,41 @@
+info:
+
+
+
+example:
+
+input:
+screen: bytearray([
+    1, 5, 19, 4, 
+    9, 30, 62, 1, 
+    82, 6, 34, 18, 
+    5, 8, 72, 150,
+    230, 0, 67, 255
+])
+width: 32
+x_1: 10
+x_2: 30
+y: 2
+
+output:
+bytearray([
+    1, 5, 19, 4, 
+    9, 30, 62, 1, 
+    82, 63, 255, 252, 
+    5, 8, 72, 150,
+    230, 0, 67, 255
+])
+
+
+brute force:
+
+calculate indexes of bytes from x_1, y to x_2, y
+
+create mask for each number and apply the mask
+
+time: O(w*h)
+space: O(1)
+
+optimized:
+
+
