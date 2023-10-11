@@ -1,0 +1,59 @@
+info:
+
+100 floors
+
+if drop egg from N or above floor, then it will break
+
+from floors below N it will not break
+
+you have two eggs
+
+find N with minimal number of drops
+
+example:
+
+brute force:
+
+just drop egg from every floor from first, when it breaks floor is N
+
+number of drops ~ N
+
+
+optimized:
+
+1.
+we can move by step of two, then if egg breaks, then we drop second egg from prev floor to check if it is n
+
+number of drops ~ N/2
+
+2.
+we can try to balance prev solution 
+
+like go by step of 10, but then go 10 steps with second egg
+
+what is the optimal balance is case of 100 floors for worst case? it means we need to minimize maximum possible number of drops
+
+if 14: 21
+
+if 13: 20
+
+if 12: 20
+
+if step is 11: 20
+
+if step is 10 then maximum possible is: 20
+
+if step is 9, then max is: 20
+
+if 8: 20
+
+if 7: 21
+
+if 5: 25
+
+
+
+
+
+2.1
+also step could be dynamic like with binary search
