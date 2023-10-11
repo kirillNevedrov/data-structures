@@ -1,0 +1,38 @@
+info:
+
+online book reader system
+
+strategy:
+
+- handle ambiguity
+
+- define core objects
+
+- analyze relationships
+
+- investigate actions
+
+example:
+
+user will read books online
+
+user can read book
+
+
+
+core objects:
+
+shelf
+
+book
+
+page
+
+bookmark
+
+brute force:
+
+
+optimized:
+
+

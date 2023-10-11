@@ -1,0 +1,30 @@
+info:
+
+minesweeper
+
+strategy:
+
+- handle ambiguity
+
+- define core objects
+
+- analyze relationships
+
+- investigate actions
+
+example:
+
+core objects:
+
+game (actions: start, complete)
+
+field (actions: isEverythingOpen)
+
+block (empty, number, mine) (actions: open)
+
+brute force:
+
+
+optimized:
+
+

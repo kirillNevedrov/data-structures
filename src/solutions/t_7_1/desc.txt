@@ -1,0 +1,32 @@
+info:
+
+design data structures for generick deck of cards
+
+explain how to subclass the data structures to implement blackjack
+
+strategy:
+
+- handle ambiguity
+
+- define core objects
+
+- analyze relationships
+
+- investigate actions
+
+example:
+
+
+
+brute force:
+
+core objects: card, deck of cards
+
+relationships: deck of cards has array of card objects
+
+actions: get card by index
+
+
+optimized:
+
+
