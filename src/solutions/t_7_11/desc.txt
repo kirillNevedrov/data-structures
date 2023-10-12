@@ -1,0 +1,21 @@
+info:
+
+data strfuctures and algorithms to in memory file system
+
+strategy:
+
+- handle ambiguity
+
+- define core objects
+
+- analyze relationships
+
+- investigate actions
+
+example:
+
+
+brute force:
+
+
+optimized:

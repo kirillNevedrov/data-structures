@@ -1,0 +1,37 @@
+info:
+
+n steps
+
+object can move 1,2,3 steps at the time
+
+calculate how many possible paths exist
+
+example:
+
+input: 3
+output: 3, 2 + 1, 1 + 2, 1 + 1 + 1 -> 4
+
+brute force:
+
+just make recusrsive top down approach
+
+calc all possible ways for n-3, n-2, n-1, if n is < 0 return 0, if n = 0 return 1
+
+time: O(3^n)
+space: O(n)
+
+
+optimized:
+
+1.
+use memoization
+
+time: O(n)
+space: O(n)
+
+2. use bottom up memoization with memoization of last 3 values and counter
+
+time: O(n)
+space: O(1)
+
+
