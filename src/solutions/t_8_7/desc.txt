@@ -1,0 +1,26 @@
+info:
+
+compute permutations of string of unique characters
+
+
+example:
+
+input: cat
+
+output: cat, cta, act, atc, tca, tac
+
+
+brute force:
+
+recursive appraoch
+
+calc all permutations for one character - it is just one character
+
+for second set next letter to all existing indexes and append to the end
+
+time: O(n! + n-1! + n-2! + ...) ~ O(n^2*n!)
+
+space O(n)
+optimized:
+
+
