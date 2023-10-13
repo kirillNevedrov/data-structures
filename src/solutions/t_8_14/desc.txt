@@ -1,0 +1,72 @@
+info:
+
+
+
+
+example:
+
+count_eval("1^0|0|1", false) -> 2
+count_eval("0&0&0&1^1|0", true) -> 10
+
+brute force:
+
+prnt each constant, 
+then expression with two constants, 
+then 3, 
+etc, 
+then calc result for each, 
+then filter by result
+
+create func to cal expression then will use real bitvise operators
+
+build ast from string?
+
+split string into elements assign type to each element
+
+build all possible first expressions, then for them all possible second, etc
+
+take each expression as a starting point
+
+1 -> 1
+
+1|0 -> (1)|(0)
+
+1|0&0 -> ((1)|(0))&(0), (1)|((0)&(0))
+
+1|0&0|1 -> ((1)|(0))&(0)|(1), (((1)|(0))&(0))|(1), ((1)|(0))&((0)|(1))
+
+so we have pairs and sigle elements
+
+so for each version we can have n/2 pairs or n/2 -1 pairs or n/2 -2 pairs, etc. the rest is single elements
+
+but better to start with single elements, so we can have 0 signgle element and all pairs if possible, the 1 single element (each of existing), then 2 single elements(all possible combinations of two elements), all possible combination of 3 elements etc until all elements are single
+
+then we build all possible combinations on top of them consifering each one as single element
+
+etc.
+
+
+start with no pairs,
+
+then add one pair and create all combinations with one pair
+
+the consider thi pair as single element and build new on top of this etc
+
+so on every level we just create pait of every element with every next element, then switch pair to single element
+
+
+n -> n*(n-1) -> n*(n-1)*(n-2) -> e*n! -> n! nodes
+
+each node: create expression object (n)
+
+then we evaluate every node: !n nodes, n to evaluate single node -> n*n!
+
+time: O(n*n!)
+
+space: O(n!)
+
+
+
+optimized:
+
+
