@@ -67,10 +67,3 @@ for rollout we can add ci/cd with no downtime deployment with database with back
 new version of db like new db replicate can be created syncronised gradually with existing datbases
 
 we can collect metrics from database and web server and configure alerts to be notified in case something goes wrong 
-
-
-
-
-
-
-

@@ -1,0 +1,52 @@
+info:
+
+search engine
+
+100 machines call other machines claster to get result, call is very expensive
+
+machines get requests at random
+
+implement cache for most recent queries
+
+how to update cache when data changes
+
+
+
+
+
+questions to define scope:
+
+
+
+
+
+
+assumptions:
+
+we need to have specific size of cache to keep most recent results for som period of time, if we have a lot of requests, for example 10 000 request per second and each returns list of links with byte per char, 
+then single result could be heavy, we could instead use ids for each result and save only ids to cache, and result to some database, then id is just 36 bytes, so size is 36 * 10 000 * 60 bytes = 21.6 megabytes for one minute's cahce in worst case when all requests are different
+
+is this case we can just save cache to every server, but we need a way to distribute it
+for this purpose we can use for example redis, with subscriptions to changes for broadcasting to all machines (with redis pub sub)
+
+also we can use it to broadcast cache invalidation to all servers
+
+initial solution:
+
+
+
+
+key issues:
+
+
+
+solutions for key issues:
+
+
+
+
+
+
+
+
+
