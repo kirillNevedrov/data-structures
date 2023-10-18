@@ -1,0 +1,76 @@
+info:
+
+service that returns end of day stock price for up to 1000 clients
+so we return data for some period (what period?)
+how many stocks we support?
+we already have the data (we need to decide how to store it)
+develop
+rollout
+monitor and mantain
+describe several solution with advantages and disadvantages
+
+
+
+questions to define scope:
+
+how long in past we should store the data? 100 years
+should we allow to get data for some period? yes
+how many stocks we should support? 10000
+
+
+assumptions:
+
+we should provide 99.99999% uptime
+
+we will have rate limit to prevent service abuse. 1 reques per second
+
+one day information {open, close, high, low, date} takes about (16 * 4)*(365*100)*10000 = 23360000000 bytes = 23.36 tb (se we need sharding about 4tb per shard in mongodb atlas)
+
+we will have read-heavy system: 1000 users with rate litim 1 request per second we will have average 1000 requests per second with expected response time 500ms
+
+
+initial solution:
+
+we strore data to database
+
+we add index by date and stock id
+
+we create web server
+
+web server loads data by dates and stock id and returns to client
+
+
+key issues:
+
+requests load (how many request per second can handle web server and database)
+
+data size
+
+solutions for key issues:
+
+no sql data bases are better designed for sharding and read heavy queries
+so we will use distributed no sql database
+
+we implement rate limit logic to limit number of requests per second
+
+we shard database to multiple servers 
+
+we can creatye multiple instances of web server with load balancer
+
+sharding strategy by stock id range and date range, then we can easily add new data without moving data between shards
+
+how to implement rate limit? we should store statistics about user requests in some database and we need authentication in this case to understand who is accesing the data
+
+also if we want monetisation then we want to authenticate users as well
+
+for rollout we can add ci/cd with no downtime deployment with database with backward compatibility and instances switch, like apply migrations to one insatnce then switch users to it while applying migration to other instance
+new version of db like new db replicate can be created syncronised gradually with existing datbases
+
+we can collect metrics from database and web server and configure alerts to be notified in case something goes wrong 
+
+
+
+
+
+
+
