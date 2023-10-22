@@ -1,0 +1,27 @@
+info:
+
+two sorted arrays A nad B
+
+A has large enough buffer at the end for brute
+
+merge B into A in sorted order
+
+example:
+
+A: [1, 4, 6, 8, 10]
+B  [3, 7, 90]
+
+brute force:
+
+go through two arrays with two pointers and add smallest value of two to new array and poving pointer of smallest value
+
+time: O(m + n)
+space: O(m + n)
+
+optimized:
+
+go through A from right to left, with two ponters: read and write, in parallel g throug B from left to right with one read pointer
+move write pointer on each step, and move read pointer of smallest as before
+
+tiem: O(m + n)
+space: O(1)

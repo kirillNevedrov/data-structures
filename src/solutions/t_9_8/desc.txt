@@ -1,0 +1,46 @@
+info:
+
+system like pastebin
+
+you enter text and get randomly generated url to access it
+
+
+
+
+
+questions to define scope:
+
+
+
+
+
+
+
+
+assumptions:
+
+
+
+initial solution:
+
+database that saves text by id
+
+web server that saves and returns text by id
+
+
+
+
+key issues:
+
+
+
+solutions for key issues:
+
+
+
+
+
+
+
+
+
