@@ -1,0 +1,13 @@
+info:
+
+sort 20gb file with one string per line
+
+if string is about 100 bytes, then 200 000 000 lines
+
+useing external sort, kind of merge sort when we split big file into chunks that fit into memory, sort that chunks, then merge them reading from streams and writing to output stream with two pointers approach as both files already sorted
+
+example:
+
+brute force:
+
+optimized:
