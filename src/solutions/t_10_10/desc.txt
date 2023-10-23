@@ -1,0 +1,59 @@
+info:
+
+read stream of integers
+periodically you call get_rank(x) to get runk of number (number of values that less or equal to x)
+
+implement track(x) and get_rank(x)
+
+example:
+
+stream: 5, 1, 4, 4, 5, 9, 7, 13, 3
+get_rank(1) == 0
+get_rank(3) == 1
+get_rank(4) == 3
+
+                                             5
+
+                        1                                        9
+
+                                 4                     7                      13
+                            3
+
+brute force:
+
+assumption: as we track every number but get runk only periodically perf of track is more important
+
+save numbers to array where you can see number of values by index, so on each track you just increase value by index
+
+in get runk go through array and accumulate get_rank
+
+track: time: O(1), space: O(1)
+
+array can take up to 17gb (2^32 * 4bytes)
+
+also get_rank can be really slow as it needs to go through entire array
+
+optimized:
+
+we can use binary search tree tree with precomputed get_rank
+
+when we enter new value we recalculate rank
+
+______________
+
+we can save values to some data structure without rank precomputing, but when get_rank called we cache computed result, then reset chache when new value affecting cache added
+
+
+________________
+
+
+balanced binary search tree, each node saves size of left subtree and size of itself, rotation will break subtree nodes count, but we can update child tree coreectly as we rebalacne as we know wheat we move where.
+
+track: time: O(log n), space: O(1)
+
+get_rank: time: O(log n), space: O(1)
+________________
+
+
+
+
