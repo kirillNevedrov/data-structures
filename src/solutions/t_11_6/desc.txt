@@ -1,0 +1,50 @@
+info:
+
+test an atm in distributed banking system
+
+example:
+
+
+solution:
+
+who will use it and why
+
+- staff will configure it, place money, take money out
+
+- clients will put money to account ot withdraw money from account
+
+use cases:
+
+staff updates configuration
+
+staff places money
+
+staff takes money out -> mony delivered into bank and eevent created in system with bills numbers that money phisically delivered to bank 
+
+client puts money to account
+
+     client puts money in other currency than his account money -> money converted to account corrency, client should confirm conversion with specific rate first
+
+     client puts more money than atm can accept -> atm nofies about max amount it can accept and gives two options retun all the money or accept as much as it can
+
+client withdraws money from account
+
+     client tries to withdraw more money than hes account has -> atm nitifies that has not enough money and shows max possible amount it can return
+
+     client tries to withdraw more money than atm has -> atm nitifies that has not enough money and shows max possible amount it can return
+
+tech issues:
+
+internet conenction lost after atm accepted money -> system saves information about money locally and tries to resend when connection recovered, 
+also all bills numbers scanned and saved to account information as an event, so it is easy to decetct why amount is different in an account checking the events
+
+atm gave money to client, but internet loast after that -> before giveing money atm creats event that it started giving money, so it will be possible to detect later what actually happened to that money are they still in atm or not 
+
+frauds:
+
+theft has stolen money from atm -> by checking all events from atm for period since last money delivery system retuns bills numbers of stolen bills
+
+client puts fake money -> fake money detected and client notified that money is fake and can not be accepted, money returned to client, warning connected to client created in system
+
+
+

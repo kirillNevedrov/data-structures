@@ -1,0 +1,37 @@
+info:
+
+exaplain how would you test the method
+
+example:
+
+class Piece:
+     def can_move_to(self, x: int, y: int) -> bool:
+          ...
+
+solution:
+
+normal test cases:
+
+take coordinates inside allowed and not allowed move
+
+test_returns_true_for_allowed_move
+
+test_returns_flase_for_not_alloed_move
+
+extremes:
+
+take coordinates on the edges of allowed and not allowed move
+
+test_returns_true_for_allowed_move
+
+test_returns_flase_for_not_alloed_move
+
+nulls amd illegal:
+
+nulls can be covered by type hint, it is still possible to pass null to method but in this case it is ok that it crashes if it does not cuase any critical consequnces
+
+test_raises_error_for_coordinates_out_of_borad
+
+
+
+
