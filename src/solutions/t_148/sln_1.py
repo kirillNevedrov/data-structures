@@ -43,7 +43,7 @@ class Solution:
 
         # use fast and slow approach to find middle and end of second linked list
         index = 1
-        while index < size and (mid_prev.next is not None or end.next is not None):
+        while index < size and (mid_prev.next or end.next):
             if end.next:
                 end = end.next.next if end.next.next else end.next
 
@@ -59,11 +59,11 @@ class Solution:
 
         return mid
 
-    def merge (self, list_1: ListNode, list_2: ListNode) -> None:
+    def merge(self, list_1: ListNode, list_2: ListNode) -> None:
         dummy_head = ListNode()
         new_tail = dummy_head
 
-        while (list_1 and list_2):
+        while list_1 and list_2:
             if list_1.val < list_2.val:
                 new_tail.next = list_1
                 list_1 = list_1.next
@@ -73,7 +73,7 @@ class Solution:
                 list_2 = list_2.next
                 new_tail = new_tail.next
 
-        new_tail.next = list_1 if list_1 is not None else list_2
+        new_tail.next = list_1 if list_1 else list_2
 
         # traverse till the end of merged list to get the newTail
         while new_tail.next:
@@ -84,8 +84,6 @@ class Solution:
 
         # update the old tail to the new tail of merged list
         self.tail = new_tail
-
-
 
     def get_count(self, head: ListNode) -> int:
         cnt = 0
